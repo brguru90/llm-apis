@@ -29,10 +29,17 @@ def analyze_stock_with_ollama(
     model: str = 'gemma3',
     num_gpu: int = -1,
     num_ctx: int = 1024 * 20,
-    prompt: str = "Its a stock trend, Give me candle pairs which might trigger 100 point movement with maximum pullback of 40 points"
+    prompt: str = "Its a stock trend, Give me candle pairs which might trigger 100 point movement with maximum pullback of 40 points",
+    ollama_host: str = "http://localhost:11434",
+    ollama_headers: Optional[dict] = None
 ) -> str:
     
-    response = ollama.chat(
+    client = ollama.Client(
+        host=ollama_host,  # Remote endpoint: public IP, domain, or ngrok URL
+        headers=ollama_headers  # Optional headers
+    )
+    
+    response = client.chat(
         model=model,
         options={'num_ctx': num_ctx, 'num_gpu': num_gpu},
         messages=[{

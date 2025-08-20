@@ -19,8 +19,8 @@ dependencies = [
 [project.scripts]
 vg_apis = "vg.main:run"
 vg_apis_service = "vg.main:run_service"
-install_service = "vg.scripts.install_service:main"
-uninstall_service = "vg.scripts.install_service:uninstall"
+vg_apis_install_service = "vg.scripts.install_service:main"
+vg_apis_uninstall_service = "vg.scripts.install_service:uninstall"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
