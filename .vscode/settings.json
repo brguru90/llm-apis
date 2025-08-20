@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": ".venv/bin/python",
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "terminal.integrated.env.linux": {
+        "CUDA_VISIBLE_DEVICES": "0"
+    }
+}

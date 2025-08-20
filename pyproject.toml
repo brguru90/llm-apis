@@ -1,0 +1,27 @@
+[project]
+name = "vg_apis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Guruprasad BR", email = "brguru90@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.116.1",
+    "ollama>=0.5.3",
+    "pydantic>=2.11.7",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.32.1",
+    "torch>=2.0.0",
+]
+
+[project.scripts]
+vg_apis = "vg.main:run"
+vg_apis_service = "vg.main:run_service"
+install_service = "vg.scripts.install_service:main"
+uninstall_service = "vg.scripts.install_service:uninstall"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
